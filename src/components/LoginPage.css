@@ -1,0 +1,16 @@
+/** @format */
+
+.loginSection {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+.loginPage {
+	max-width: 420px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
