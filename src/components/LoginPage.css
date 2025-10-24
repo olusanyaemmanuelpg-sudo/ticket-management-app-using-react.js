@@ -76,3 +76,22 @@
 	font-size: 1rem;
 	transition: all 0.3s ease;
 }
+.toast {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	color: white;
+	padding: 1rem 1.5rem;
+	border-radius: 8px;
+	box-sizing: 0 4px;
+	z-index: 9999;
+	animation: slideIn 0.3s ease;
+	max-width: 400px;
+}
+
+.input-error {
+	color: #ef4444;
+	font-size: 0.875rem;
+	display: block;
+	margin-top: 0.25rem;
+}
