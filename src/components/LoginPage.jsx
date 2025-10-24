@@ -3,6 +3,7 @@
 import './LoginPage.css';
 
 export function LoginPage() {
+	const
 	return (
 		<section className='loginSection'>
 			<div className='loginPage'>
@@ -21,9 +22,11 @@ export function LoginPage() {
 				<button className='login-btn'>Login</button>
 				<p className='login-signup'>
 					Don't have an account?
-					<a href=''> Sign up</a>
+					<a href='signin'> Sign up</a>
 				</p>
-				<button className='back-to-home'>Back to Home</button>
+				<a href='/'>
+					<button className='back-to-home'>Back to Home</button>
+				</a>
 			</div>
 		</section>
 	);

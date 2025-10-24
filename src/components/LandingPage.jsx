@@ -24,11 +24,11 @@ export function LandingPage() {
 				<nav>
 					<h2 className='logo'>TicketFlow</h2>
 					<div className='nav-btn'>
-						<a href='#' className='secondaryButton'>
+						<a href='login' className='secondaryButton'>
 							Login
 						</a>
-						<a href='' className='primaryButton'>
-							Signing
+						<a href='signin' className='primaryButton'>
+							Signin
 						</a>
 					</div>
 				</nav>
@@ -44,7 +44,9 @@ export function LandingPage() {
 						A powerful and intuitive ticket management system built for modern
 						teams. Track, organize, and resolve issues faster.
 					</p>
-					<button className='heroBtn'>Start Free Trial</button>
+					<a href='signin' className='heroBtn'>
+						Start Free
+					</a>
 				</section>
 				<svg className='svg' viewBox='0 0 1440 320' preserveAspectRatio='none'>
 					<path

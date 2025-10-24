@@ -3,7 +3,7 @@
 html,
 body {
 	max-width: 100%;
-	overflow-x: hidden; /* prevent horizontal scroll from absolute elements */
+	overflow-x: hidden;
 }
 
 body {
@@ -14,10 +14,10 @@ body {
 main {
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 0 1rem; /* smaller side padding for small screens */
+	padding: 0 2rem;
 	position: relative;
 	z-index: 1;
-	overflow: hidden; /* contain absolutely positioned decorative elements */
+	overflow: hidden;
 }
 .circle {
 	position: absolute;
@@ -40,7 +40,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-self: center;
-	padding: 1.5rem 0;
+	padding: 2rem 0;
 	gap: 1rem;
 }
 nav h2 {
@@ -50,7 +50,7 @@ nav h2 {
 }
 nav .nav-btn {
 	display: flex;
-	gap: 0.75rem;
+	gap: 1rem;
 	align-items: center;
 	flex-wrap: wrap;
 }
@@ -81,7 +81,7 @@ nav .primaryButton {
 
 .heroSection {
 	text-align: center;
-	padding: 5rem 0;
+	padding: 6rem 0;
 	position: relative;
 }
 .circle2 {
@@ -94,11 +94,10 @@ nav .primaryButton {
 	left: 10%;
 	transform: translateY(-50%);
 	filter: blur(40px);
-	pointer-events: none;
 }
 .heroH1 {
 	color: white;
-	font-size: clamp(1.8rem, 4vw, 3.5rem);
+	font-size: 3.5rem;
 	font-weight: bold;
 	margin-bottom: 1.5rem;
 	line-height: 1.2;
@@ -120,6 +119,8 @@ nav .primaryButton {
 	font-weight: 600;
 	font-size: 1.1rem;
 	transition: all 0.3s ease;
+	text-decoration: none;
+	z-index: 1000;
 }
 .svg {
 	position: absolute;
@@ -127,12 +128,11 @@ nav .primaryButton {
 	left: 0;
 	width: 100%;
 	height: auto;
-	display: block; /* prevent inline svg whitespace issues */
 }
 
 .featuresSection {
 	background: rgba(15, 23, 42, 0.8);
-	padding: 4rem 1rem;
+	padding: 6rem 2rem;
 }
 .features {
 	max-width: 1440px;

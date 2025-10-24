@@ -1,13 +1,13 @@
 /** @format */
 
-.loginSection {
+.Signin-section {
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 2rem;
 }
-.loginPage {
+.signin-page {
 	max-width: 420px;
 	width: 100%;
 	background: rgba(30, 41, 59, 0.8);
@@ -15,24 +15,24 @@
 	border-radius: 16px;
 	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
-.loginPage h2 {
+.signin-page h2 {
 	color: white;
 	font-size: 2rem;
 	margin-bottom: 0.5rem;
 }
-.loginPage p {
+.signin-page p {
 	color: #94a3b8;
 	margin-bottom: 2rem;
 }
-.login-input {
+.signInput {
 	margin-bottom: 1.5rem;
 }
-.login-input label {
+.signInput label {
 	color: #cbd5e1;
 	display: block;
 	margin-bottom: 0.5rem;
 }
-.login-input input {
+.signInput input {
 	width: 100%;
 	padding: 0.75rem;
 	background: rgba(15, 23, 42, 0.6);
@@ -41,7 +41,7 @@
 	color: white;
 	font-size: 1rem;
 }
-.login-btn {
+.signin-btn {
 	background: linear-gradient(135deg, #3b82f6, #2563eb);
 	color: white;
 	border: none;
@@ -54,10 +54,10 @@
 	width: 100%;
 	margin-bottom: 1rem;
 }
-.login-signup {
+.sign-login {
 	text-align: center;
 }
-.login-signup a {
+.sign-login a {
 	text-decoration: none;
 	color: #3b82f6;
 	cursor: pointer;
