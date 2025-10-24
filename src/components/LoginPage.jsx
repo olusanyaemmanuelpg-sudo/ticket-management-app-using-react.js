@@ -19,6 +19,16 @@ export function LoginPage({ useAuth, showToast }) {
 		setPassword(event.target.value);
 		setErrors({ ...errors, password: '' });
 	};
+
+	const [showPass, setShowPass] = useState(true);
+	const showPasswordInput = () => {
+		if (showPass) {
+			setShowPass(false);
+		} else {
+			setShowPass(true);
+		}
+	};
+
 	const submitAction = (event) => {
 		event.preventDefault();
 		const newErrors = {};
@@ -63,6 +73,13 @@ export function LoginPage({ useAuth, showToast }) {
 						value={password}
 						onChange={passwordInput}
 					/>
+					<i
+						className={
+							showPass
+								? 'fa-solid fa-lock password-icon'
+								: 'fa-solid fa-lock-open password-icon'
+						}
+						onClick={showPasswordInput}></i>
 					{errors.password && (
 						<span className='input-error'>{errors.password}</span>
 					)}

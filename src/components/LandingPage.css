@@ -120,6 +120,7 @@ nav .primaryButton {
 	font-size: 1.1rem;
 	transition: all 0.3s ease;
 	text-decoration: none;
+	position: relative;
 	z-index: 1000;
 }
 .svg {
@@ -128,6 +129,7 @@ nav .primaryButton {
 	left: 0;
 	width: 100%;
 	height: auto;
+	pointer-events: none;
 }
 
 .featuresSection {

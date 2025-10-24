@@ -39,8 +39,8 @@ export const AuthProvider = ({ children }) => {
 		return { success: false, error: 'Invalid credentials' };
 	};
 
-	const signup = (name, email) => {
-		const userData = { email, name, id: Date.now() };
+	const signup = (name, email, password) => {
+		const userData = { email, name, id: Date.now(), password };
 		localStorage.setItem('ticketapp_session', JSON.stringify(userData));
 		setUser(userData);
 		return { success: true };
