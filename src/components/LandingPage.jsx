@@ -1,5 +1,6 @@
 /** @format */
 
+import { FooterPage } from './Footer';
 import './LandingPage.css';
 
 export function LandingPage() {
@@ -68,11 +69,7 @@ export function LandingPage() {
 					</div>
 				</div>
 			</section>
-			<footer>
-				<div className='footertext'>
-					© 2025 TicketFlow. All rights reserved.
-				</div>
-			</footer>
+			<FooterPage />
 		</>
 	);
 }

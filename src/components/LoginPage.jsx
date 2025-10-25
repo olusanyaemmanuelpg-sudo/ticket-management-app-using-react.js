@@ -68,7 +68,7 @@ export function LoginPage({ useAuth, showToast }) {
 				<div className='login-input'>
 					<label>Password</label>
 					<input
-						type='password'
+						type={showPass ? 'password' : 'text'}
 						placeholder='password123'
 						value={password}
 						onChange={passwordInput}
