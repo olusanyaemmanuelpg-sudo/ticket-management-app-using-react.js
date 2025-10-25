@@ -18,6 +18,8 @@ export function TicketManagement({ tickets, setTickets, showToast }) {
 	const handleSubmit = () => {
 		const newErrors = {};
 		if (!formData.title) newErrors.title = 'Title is required';
+		if (!['open', 'in_progress', 'closed'].includes(formData.status))
+			newErrors.status = 'Invalid status';
 		if (!formData.description)
 			newErrors.description = 'Description is required';
 
