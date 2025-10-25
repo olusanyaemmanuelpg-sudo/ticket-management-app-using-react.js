@@ -168,7 +168,9 @@ export function TicketManagement({ tickets, setTickets, showToast }) {
 								<div className='firstsection'>
 									<h3>{ticket.title}</h3>
 									<p>{ticket.description}</p>
-									<span style={getStatusStyle(ticket.status)}>
+									<span
+										className='ticket-status'
+										style={getStatusStyle(ticket.status)}>
 										{ticket.status.replace('_', ' ')}
 									</span>
 								</div>

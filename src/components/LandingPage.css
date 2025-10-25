@@ -167,3 +167,37 @@ nav .primaryButton {
 	color: #94a3b8;
 	line-height: 1.6;
 }
+
+@media (max-width: 402px) {
+	.nav-btn {
+		margin-left: 5rem;
+	}
+}
+@media (max-width: 364px) {
+	.nav-btn {
+		margin-left: 4rem;
+	}
+}
+@media (max-width: 350px) {
+	.nav-btn {
+		margin-left: 3rem;
+	}
+}
+
+@media (max-width: 330px) {
+	.nav-btn {
+		margin-left: 2rem;
+	}
+}
+
+@media (max-width: 320px) {
+	.nav-btn {
+		margin-left: 1rem;
+	}
+}
+
+@media (max-width: 305px) {
+	.nav-btn {
+		margin-left: 0;
+	}
+}
