@@ -73,7 +73,10 @@ function App() {
 					path='signin'
 					element={<SiginPage useAuth={useAuth} showToast={showToast} />}
 				/>
-				<Route path='dashboard' element={<DashboardPage />} />
+				<Route
+					path='dashboard'
+					element={<DashboardPage showToast={showToast} />}
+				/>
 			</Routes>
 		</AuthProvider>
 	);

@@ -1,9 +1,17 @@
 /** @format */
 
+import { useNavigate } from 'react-router';
 import './DashboardPage.css';
 import { FooterPage } from './Footer';
 
-export function DashboardPage() {
+export function DashboardPage({ showToast }) {
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		showToast('Logged out successfully', 'success');
+		navigate('/');
+	};
+
 	const StatCard = ({ title, value, color }) => {
 		return (
 			<div className='StatcardStyle' style={{ border: `2px solid ${color}33` }}>
@@ -17,7 +25,7 @@ export function DashboardPage() {
 			<div className='dashboard-page'>
 				<nav className='dash-nav'>
 					<h2>TicketFlow</h2>
-					<button>Logout</button>
+					<button onClick={handleLogout}>Logout</button>
 				</nav>
 				<h1>Welcome, Admin Deji!</h1>
 				<p>Here's your ticket overview</p>
