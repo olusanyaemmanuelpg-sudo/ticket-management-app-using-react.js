@@ -1,0 +1,45 @@
+/** @format */
+
+.tickets-page {
+	padding: 2rem;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.tickets-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.ticket-card {
+	background: rgba(30, 41, 59, 0.8);
+	padding: 1rem;
+	border-radius: 8px;
+	border: 1px solid rgba(148, 163, 184, 0.06);
+}
+
+.ticket-desc {
+	color: #cbd5e1;
+	margin: 0.5rem 0;
+}
+
+.ticket-meta {
+	display: flex;
+	gap: 0.5rem;
+	font-size: 0.875rem;
+	color: #94a3b8;
+}
+
+.ticket-priority {
+	background: rgba(59, 130, 246, 0.12);
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+}
+
+.ticket-status {
+	background: rgba(16, 185, 129, 0.06);
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+}

@@ -4,12 +4,21 @@ import { useNavigate } from 'react-router';
 import './DashboardPage.css';
 import { FooterPage } from './Footer';
 
-export function DashboardPage({ showToast }) {
+export function DashboardPage({ showToast, useAuth, tickets }) {
+	const { logout, user } = useAuth();
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
+		logout();
 		showToast('Logged out successfully', 'success');
 		navigate('/');
+	};
+
+	const stats = {
+		total: tickets.length,
+		open: tickets.filter((t) => t.status === 'open').length,
+		inProgress: tickets.filter((t) => t.status === 'in_progress').length,
+		closed: tickets.filter((t) => t.status === 'closed').length,
 	};
 
 	const StatCard = ({ title, value, color }) => {
@@ -27,16 +36,24 @@ export function DashboardPage({ showToast }) {
 					<h2>TicketFlow</h2>
 					<button onClick={handleLogout}>Logout</button>
 				</nav>
-				<h1>Welcome, Admin Deji!</h1>
+				<h1>Welcome, {user?.name} !</h1>
 				<p>Here's your ticket overview</p>
 
 				<div className='dashboard-grid'>
-					<StatCard title='Total Tickets' value={2} color='#3b82f6' />
-					<StatCard title='Open' value={1} color='#10b981' />
-					<StatCard title='In Progress' value={1} color='#f59e0b' />
-					<StatCard title='Closed' value={0} color='#6b7280' />
+					<StatCard title='Total Tickets' value={stats.total} color='#3b82f6' />
+					<StatCard title='Open' value={stats.open} color='#10b981' />
+					<StatCard
+						title='In Progress'
+						value={stats.inProgress}
+						color='#f59e0b'
+					/>
+					<StatCard title='Closed' value={stats.closed} color='#6b7280' />
 				</div>
-				<button className='manage-tickets'>Manage Tickets →</button>
+				<button
+					className='manage-tickets'
+					onClick={() => navigate('/manage-tickets')}>
+					Manage Tickets →
+				</button>
 			</div>
 			<FooterPage />
 		</main>

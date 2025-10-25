@@ -6,11 +6,30 @@ import { LandingPage } from './components/LandingPage';
 import { LoginPage } from './components/LoginPage';
 import { SiginPage } from './components/SigninPage';
 import { DashboardPage } from './components/DashboardPage';
+import { TicketManagement } from './components/TicketManagement';
 import { Routes, Route } from 'react-router';
 import './App.css';
 
 function App() {
 	const [toastState, setToastState] = useState(null);
+	const [tickets, setTickets] = useState([
+		{
+			id: 1,
+			title: 'Fix login bug',
+			status: 'open',
+			description: 'Users cannot log in',
+			priority: 'high',
+			createdAt: Date.now(),
+		},
+		{
+			id: 2,
+			title: 'Update docs',
+			status: 'in_progress',
+			description: 'Need to update API docs',
+			priority: 'medium',
+			createdAt: Date.now(),
+		},
+	]);
 
 	const showToast = (...args) => {
 		let message,
@@ -75,7 +94,19 @@ function App() {
 				/>
 				<Route
 					path='dashboard'
-					element={<DashboardPage showToast={showToast} />}
+					element={
+						<DashboardPage
+							showToast={showToast}
+							useAuth={useAuth}
+							tickets={tickets}
+						/>
+					}
+				/>
+				<Route
+					path='manage-tickets'
+					element={
+						<TicketManagement setTickets={setTickets} tickets={tickets} />
+					}
 				/>
 			</Routes>
 		</AuthProvider>
