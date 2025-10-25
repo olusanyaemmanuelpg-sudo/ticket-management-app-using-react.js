@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import './SigninPage.css';
+import { FooterPage } from './Footer';
 
 export function SiginPage({ useAuth, showToast }) {
 	const { signup } = useAuth();
@@ -54,52 +55,57 @@ export function SiginPage({ useAuth, showToast }) {
 		}
 	};
 	return (
-		<section className='Signin-section'>
-			<div className='signin-page'>
-				<h2>Create Account</h2>
-				<p>Get started with TicketFlow</p>
-				<div className='signInput'>
-					<label> Full Name</label>
-					<input type='text' value={name} onChange={fullnameInput} />
+		<>
+			<section className='Signin-section'>
+				<div className='signin-page'>
+					<h2>Create Account</h2>
+					<p>Get started with TicketFlow</p>
+					<div className='signInput'>
+						<label> Full Name</label>
+						<input type='text' value={name} onChange={fullnameInput} />
 
-					{errors.fullname && (
-						<span className='input-error'>{errors.fullname}</span>
-					)}
-				</div>
-				<div className='signInput'>
-					<label> Email</label>
-					<input type='email' value={email} onChange={emailInput} />
-					{errors.email && <span className='input-error'>{errors.email}</span>}
-				</div>
-				<div className='signInput'>
-					<label> Password</label>
-					<input
-						type={showPass ? 'password' : 'text'}
-						value={password}
-						onChange={passwordInput}
-					/>
-					<i
-						className={
-							showPass
-								? 'fa-solid fa-lock password-icon'
-								: 'fa-solid fa-lock-open password-icon'
-						}
-						onClick={showPasswordInput}></i>
-					{errors.password && (
-						<span className='input-error'>{errors.password}</span>
-					)}
-				</div>
+						{errors.fullname && (
+							<span className='input-error'>{errors.fullname}</span>
+						)}
+					</div>
+					<div className='signInput'>
+						<label> Email</label>
+						<input type='email' value={email} onChange={emailInput} />
+						{errors.email && (
+							<span className='input-error'>{errors.email}</span>
+						)}
+					</div>
+					<div className='signInput'>
+						<label> Password</label>
+						<input
+							type={showPass ? 'password' : 'text'}
+							value={password}
+							onChange={passwordInput}
+						/>
+						<i
+							className={
+								showPass
+									? 'fa-solid fa-lock password-icon'
+									: 'fa-solid fa-lock-open password-icon'
+							}
+							onClick={showPasswordInput}></i>
+						{errors.password && (
+							<span className='input-error'>{errors.password}</span>
+						)}
+					</div>
 
-				<button className='signin-btn' onClick={submitAction}>
-					Sign Up
-				</button>
-				<p className='sign-login'>
-					Already have an account? <a href='login'>Login</a>
-				</p>
-				<a href='/'>
-					<button className='back-to-home'>Back to Home</button>
-				</a>
-			</div>
-		</section>
+					<button className='signin-btn' onClick={submitAction}>
+						Sign Up
+					</button>
+					<p className='sign-login'>
+						Already have an account? <a href='login'>Login</a>
+					</p>
+					<a href='/'>
+						<button className='back-to-home'>Back to Home</button>
+					</a>
+				</div>
+			</section>
+			<FooterPage />
+		</>
 	);
 }

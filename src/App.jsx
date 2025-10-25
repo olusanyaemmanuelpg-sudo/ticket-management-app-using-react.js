@@ -8,6 +8,7 @@ import { SiginPage } from './components/SigninPage';
 import { DashboardPage } from './components/DashboardPage';
 import { TicketManagement } from './components/TicketManagement';
 import { Routes, Route } from 'react-router';
+import { RequireAuth } from './components/RequireAuth';
 import './App.css';
 
 function App() {
@@ -95,17 +96,25 @@ function App() {
 				<Route
 					path='dashboard'
 					element={
-						<DashboardPage
-							showToast={showToast}
-							useAuth={useAuth}
-							tickets={tickets}
-						/>
+						<RequireAuth>
+							<DashboardPage
+								showToast={showToast}
+								useAuth={useAuth}
+								tickets={tickets}
+							/>
+						</RequireAuth>
 					}
 				/>
 				<Route
 					path='manage-tickets'
 					element={
-						<TicketManagement setTickets={setTickets} tickets={tickets} />
+						<RequireAuth>
+							<TicketManagement
+								setTickets={setTickets}
+								tickets={tickets}
+								showToast={showToast}
+							/>
+						</RequireAuth>
 					}
 				/>
 			</Routes>

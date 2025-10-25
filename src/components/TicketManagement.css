@@ -1,45 +1,158 @@
 /** @format */
 
-.tickets-page {
+main {
+	padding: 0;
+}
+.manage-tickets-page {
+	min-height: 100vh;
+}
+
+nav {
+	margin-bottom: 2rem;
 	padding: 2rem;
-	max-width: 1000px;
-	margin: 0 auto;
 }
-
-.tickets-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 1rem;
-	margin-top: 1rem;
-}
-
-.ticket-card {
-	background: rgba(30, 41, 59, 0.8);
-	padding: 1rem;
+nav button {
+	background: rgba(51, 65, 85, 0.8);
+	color: white;
+	border: 1px solid rgba(148, 163, 184, 0.3);
+	padding: 0.75rem 1.5rem;
 	border-radius: 8px;
-	border: 1px solid rgba(148, 163, 184, 0.06);
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+}
+nav h2 {
+	font-size: 1.5rem;
 }
 
-.ticket-desc {
+.manage-ticket-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding: 0 2rem;
+}
+.manage-ticket-flex h1 {
+	color: white;
+	font-size: 2.8rem;
+}
+.manage-ticket-flex button,
+.manage-btn {
+	background: linear-gradient(135deg, #3b82f6, #2563eb);
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.1rem;
+	transition: all 0.3s ease;
+}
+
+.form-section {
+	background: rgba(30, 41, 59, 0.8);
+	padding: 2rem;
+	margin: 2rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.form-section h3 {
+	color: white;
+	margin-bottom: 1.3rem;
+	font-size: 1.3rem;
+}
+
+.form-input {
+	margin-bottom: 1rem;
+}
+.form-input label {
 	color: #cbd5e1;
-	margin: 0.5rem 0;
+	display: block;
+	margin-bottom: 0.5rem;
+	font-size: 1.1rem;
+}
+.form-input input,
+.select-input,
+.desc-input {
+	width: 100%;
+	padding: 0.75rem;
+	background: rgba(15, 23, 42, 0.6);
+	font-size: 1.05rem;
+	color: white;
+	border-radius: 8px;
+	border: 1px solid rgba(148, 163, 184, 0.3);
+}
+.select-input {
+	padding: 0.9rem;
+}
+.desc-input {
+	min-height: 100px;
 }
 
-.ticket-meta {
+.manage-grid {
+	display: grid;
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+	padding: 0 2rem;
+}
+.manage-grid-container {
+	background: rgba(30, 41, 59, 0.8);
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(148, 163, 184, 0.1);
+}
+.manage-grid-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+}
+.firstsection {
+	flex: 1;
+}
+.firstsection h3 {
+	color: white;
+	font-size: 1.4rem;
+	margin-bottom: 0.5rem;
+}
+.firstsection p {
+	color: #94a3b8;
+	margin-bottom: 1.2rem;
+}
+.secondsection {
 	display: flex;
 	gap: 0.5rem;
-	font-size: 0.875rem;
-	color: #94a3b8;
 }
 
-.ticket-priority {
-	background: rgba(59, 130, 246, 0.12);
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
+.edit-btn {
+	background: rgba(51, 65, 85, 0.8);
+	color: white;
+	border: 1px solid rgba(148, 163, 184, 0.3);
+	padding: 0.65rem 1.2rem;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+}
+.del-btn {
+	background: #ef4444;
+	color: white;
+	border: 1px solid rgba(148, 163, 184, 0.3);
+	padding: 0.65rem 1.2rem;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 1rem;
+	transition: all 0.3s ease;
 }
 
-.ticket-status {
-	background: rgba(16, 185, 129, 0.06);
-	padding: 0.25rem 0.5rem;
-	border-radius: 4px;
+.input-error {
+	color: #ef4444;
+	font-size: 0.9rem;
+	display: block;
+	margin-top: 0.25rem;
 }
