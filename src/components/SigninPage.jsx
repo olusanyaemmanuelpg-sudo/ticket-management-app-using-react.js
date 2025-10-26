@@ -40,8 +40,28 @@ export function SiginPage({ useAuth, showToast }) {
 		event.preventDefault();
 		const newErrors = {};
 		if (!name) newErrors.fullname = 'Fullname is required';
-		if (!email) newErrors.email = 'Email is required';
-		if (!password) newErrors.password = 'Password is required';
+		if (!email) {
+			newErrors.email = 'Email is required';
+		} else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+			newErrors.email = 'Please enter a valid email address';
+		}
+		if (!password) {
+			newErrors.password = 'Password is required';
+		} else if (password.length < 8) {
+			newErrors.password =
+				'Password mus                                                    t be atleast 8 characters long';
+		} else if (!/[A-Z]/.test(password)) {
+			newErrors.password =
+				'Password must include at least one uppercase letter';
+		} else if (!/[a-z]/.test(password)) {
+			newErrors.password =
+				'Password must include at least one lowercase letter';
+		} else if (!/[0-9]/.test(password)) {
+			newErrors.password = 'Password must include at least one number';
+		} else if (!/[!@#$%^&*]/.test(password)) {
+			newErrors.password =
+				'Password must include at least one special character';
+		}
 
 		if (Object.keys(newErrors).length > 0) {
 			setErrors(newErrors);
